@@ -1,0 +1,650 @@
+
+* {
+    box-sizing: border-box;
+}
+
+button:active {
+    transform: scale(.95);
+}
+
+::selection {
+    color: none;
+    background: none;
+}
+
+#container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+
+.centerHorizontal {
+    margin: auto;
+}
+
+#bannerContainer {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3%;
+}
+
+#bannerImage {
+    width: 20%;
+}
+
+#bannerQuestionIcon {
+    width: 3.05%;
+    padding-top: 3%;
+    margin-left: 1%;
+    background: url(/images/question-icon.png);
+    background-size: contain;
+    border: none;
+}
+
+#bannerStatIcon {
+    width: 3%;
+    padding-top: 3%;
+    margin-right: 1%;
+    background: url(/images/stat-icon.png);
+    background-size: cover;
+    border: none;
+}
+
+#navBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.navContent {
+    text-decoration: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: black;
+    font-weight: bold;
+    font-size: 1.3vw;
+    margin: 1%;
+}
+
+#xIcon{
+    width: 6%;
+    padding-top: 6%;
+    margin-left: 1%;
+    background: url(/images/x-icon.png);
+    background-size: cover;
+    border: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-top: 3%;
+    margin-left: 3%;
+}
+
+
+#userStatContainer {
+    visibility: hidden;
+}
+
+#userDataContainer {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxRow {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.boxCell {
+    padding: 2%;
+    text-align: center;
+    font-size: 1.5vw;
+}
+
+.numText {
+    font-size: 2vw;
+}
+
+#userDisplayContainer {
+    width: 100%;
+    height: 60;
+}
+
+.guessBarContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-block: 5%;
+    justify-content: left;
+    margin-inline: 15%;
+}
+
+.numGuess {
+    margin-inline: 2%;
+    font-size: 1vw;
+}
+
+.guessBar {
+    background-color: rgb(135, 206, 250);
+    text-align: right;
+    font-size: 1.5vw;
+    padding: 1%;
+    border-radius: 1px;
+}
+
+#shareScoreButton {
+    font-size: 1.5vw;
+    font-weight:600;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    padding-block: 2%;
+    padding-inline: 4%;
+    background-color: rgb(135, 206, 250);
+    border: none;
+    border-radius: 10px;
+    margin-block: 3%;
+    visibility: hidden;
+}
+
+#instructionContainer {
+    visibility: hidden;
+    overflow-y: scroll;
+}
+
+.infoContainer {
+    z-index: 3;
+    background-color: whitesmoke;
+    width: 100%;
+    position: absolute;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.infoHeader {
+    font-weight: 500;
+    font-size: 2vw;
+    padding: 3%;
+    margin: auto;
+    margin-bottom: 5%;
+}
+
+.infoBody {
+    margin: 3%;
+    font-size: 1.2vw;
+}
+
+
+#statContainer {
+    display: flex;
+    width: 100%;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1%;
+}
+
+#statText {
+    font-size: 1.2vw;
+    font-weight:600;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+}
+
+#actionContainer {
+    align-items: center;
+    justify-content: center;
+    /*border: 3px solid rgb(245, 19, 19);*/
+    width: 25%;
+    height: 100%;
+    position: relative;
+    
+}
+
+#guessRows {
+    width: 100%;
+    height: 50%
+}
+
+.guessRowContainer{
+    display: flex;
+    width: 100%;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 3%;
+}
+
+.guessRow {
+    display: flex;
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+    border: 0.25vw solid rgb(135, 206, 250);
+    flex-wrap: wrap
+}
+
+
+.guessRowIndicatorContainer {
+    display: flex;
+    width: 90%;
+    margin-bottom: 1%;
+    position: relative;
+}
+
+.guessRowHighIndicator {
+    background-color: rgb(135, 206, 250);
+    position: absolute;
+    left: 0;
+    padding: 1%;
+    font-size: 1vw;
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+}
+
+.guessRowLowIndicator {
+    background-color: rgb(135, 206, 250);
+    position: absolute;
+    right: 0;
+    padding: 1%;
+    color: white;
+    font-size: 1vw;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+}
+
+.guessRowData {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1vw;
+    font-weight: 400;
+    padding-top: 1%;
+}
+
+.guessContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 17%;
+    height: 100%;
+    padding: 0;
+    padding-top: 25%; /* 15% creates a 1:1 aspect ratio for a 15% width */
+    margin-inline: 1.5%;
+    position: relative;
+
+}
+
+.guessButton {
+    position: absolute; /* Allows the button to fill the container */
+    border: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background-size: contain;
+}
+
+.guessOverlay {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(135, 206, 250);
+    opacity: 0;
+
+}
+
+.guessOverlay:hover {
+    opacity:0.2!important;
+}
+
+
+
+#playerChoiceContainer {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    /*border: 3px solid rgb(135, 206, 250);*/
+    flex-wrap: wrap;
+    position: absolute;
+    
+}
+
+.playerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 15%;
+    margin: 2%;
+
+}
+
+.playerOverlay {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(135, 206, 250);
+    opacity: 0;
+}
+
+.playerOverlay:hover {
+    opacity:0.2!important;
+}
+
+.playerImage {
+    width: 100%;
+}
+
+.playerLabel {
+    width: 100%;
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 0.6vw;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+#submitContainer {
+    display: flex;
+    width: 100%;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2%;
+    flex-direction: column;
+
+}
+/* logo #4CADE8*/
+#submitButton {
+    font-size: 1.5vw;
+    font-weight:600;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    padding-block: 2%;
+    padding-inline: 4%;
+    background-color: rgb(135, 206, 250);
+    border: none;
+    border-radius: 10px
+}
+#submitButton:hover {
+    background-color: rgb(140, 219, 248);
+}
+
+.correctText {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.2vw;
+    font-weight: 500;
+    margin-top: 3%;
+}
+
+
+
+@media (max-aspect-ratio: 7/5){
+    #actionContainer {
+        width: 40%;
+    }
+    #bannerImage {
+        width: 30%;
+    }
+    #bannerQuestionIcon {
+        width: 4.54%;
+        padding-top: 4.5%;
+    }
+    #bannerStatIcon {
+        width: 4.5%;
+        padding-top: 4.5%;
+    }
+    .navContent {
+        font-size: 1.8vw;
+    }
+    .playerLabel {
+        font-size: 1vw;
+    }
+    #submitButton {
+        font-size: 2vw;
+    }
+    #statText {
+        font-size: 2vw;
+    }
+    .guessRowHighIndicator, .guessRowLowIndicator, .guessRowData {
+        font-size: 1.2vw;
+    }
+
+    .guessRow {
+        border: 0.3vw solid rgb(135, 206, 250);
+    }
+
+    .correctText {
+        font-size: 1.5vw;
+    }
+    .infoHeader {
+        font-size: 2.5vw;
+    }
+    .infoBody {
+        font-size: 1.6vw;
+    }
+
+    .boxCell {
+        font-size: 2vw;
+    }
+    .numText {
+        font-size: 2.5vw;
+    }
+    .numGuess {
+        font-size: 1.5vw;
+    }
+    .guessBar {
+        font-size: 2vw;
+    }
+    #shareScoreButton {
+        font-size: 2vw;
+    }
+}
+
+@media (max-aspect-ratio: 1/1){
+    #actionContainer {
+        width: 50%;
+    }
+    #bannerImage {
+        width: 35%;
+    }
+    #bannerQuestionIcon {
+        width: 6.08%;
+        padding-top: 6%;
+    }
+    
+    #bannerStatIcon {
+        width: 6%;
+        padding-top: 6%;
+    }
+    .navContent {
+        font-size: 2.3vw;
+    }
+    .playerLabel {
+        font-size: 1.1vw;
+    }
+    #submitButton {
+        font-size: 2.5vw;
+    }
+    #statText {
+        font-size: 2.5vw;
+    }
+    .guessRowHighIndicator, .guessRowLowIndicator, .guessRowData {
+        font-size: 1.6vw;
+    }
+    .guessRow {
+        border: 0.5vw solid rgb(135, 206, 250);
+    }
+    .correctText {
+        font-size: 1.8vw;
+    }
+    .infoHeader {
+        font-size: 3vw;
+    }
+    .infoBody {
+        font-size: 2vw;
+    }
+
+    .boxCell {
+        font-size: 2.5vw;
+    }
+    .numText {
+        font-size: 3vw;
+    }
+    .numGuess {
+        font-size: 2vw;
+    }
+    .guessBar {
+        font-size: 2.5vw;
+    }
+    #shareScoreButton {
+        font-size: 2.5vw;
+    }
+}
+
+@media (max-aspect-ratio: 13/20){
+    #actionContainer {
+        width: 80%;
+    }
+    #bannerImage {
+        width: 60%;
+    }
+    #bannerQuestionIcon {
+        width: 9.1%;
+        padding-top: 9%;
+    }
+    
+    #bannerStatIcon {
+        width: 9%;
+        padding-top: 9%;
+    }
+    .navContent {
+        font-size: 3.2vw;
+    }
+    .playerLabel {
+        font-size: 1.6vw;
+    }
+    #submitButton {
+        font-size: 2.9vw;
+    }
+    #statText {
+        font-size: 3.6vw;
+    }
+    .guessRowHighIndicator, .guessRowLowIndicator, .guessRowData {
+        font-size: 2.4vw;
+    }
+    .guessRow {
+        border: 0.6vw solid rgb(135, 206, 250);
+    }
+    .correctText {
+        font-size: 2.7vw;
+    }
+    .infoHeader {
+        font-size: 5.2vw;
+    }
+    .infoBody {
+        font-size: 3.5vw;
+    }
+    .boxCell {
+        font-size: 3.7vw;
+    }
+    .numText {
+        font-size: 4vw;
+    }
+    .numGuess {
+        font-size: 3vw;
+    }
+    .guessBar {
+        font-size: 3.5vw;
+    }
+    #shareScoreButton {
+        font-size: 3.5vw;
+    }
+}
+
+@media (max-aspect-ratio: 1/2){
+    #actionContainer {
+        width: 100%;
+    }
+    #bannerImage {
+        width: 70%;
+    }
+    #bannerQuestionIcon {
+        width: 12.1%;
+        padding-top: 12%;
+    }
+    
+    #bannerStatIcon {
+        width: 12%;
+        padding-top: 12%;
+    }
+    .navContent {
+        font-size: 4vw;
+    }
+    .playerLabel {
+        font-size: 2vw;
+    }
+    #submitButton {
+        font-size: 5vw;
+    }
+    #statText {
+        font-size: 5vw;
+    }
+    .guessRowHighIndicator, .guessRowLowIndicator, .guessRowData {
+        font-size: 2.8vw;
+    }
+    .guessRow {
+        border: 0.8vw solid rgb(135, 206, 250);
+        width: 95%;
+    }
+    .correctText {
+        font-size: 3vw;
+    }
+    .infoHeader {
+        font-size: 6vw;
+    }
+    .infoBody {
+        font-size: 4vw;
+    }
+    .boxCell {
+        font-size: 4.5vw;
+    }
+    .numText {
+        font-size: 5vw;
+    }
+    .numGuess {
+        font-size: 4vw;
+    }
+    .guessBar {
+        font-size: 4.5vw;
+    }
+    #shareScoreButton {
+        font-size: 4.5vw;
+    }
+    
+}
+

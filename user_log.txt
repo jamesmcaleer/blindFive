@@ -1,0 +1,5 @@
+totalUsers: 144
+totalNBA: 56
+totalNFL: 88
+11/6/24 nba: 6 nfl: 22
+10/23/24 nba: 0 nfl: 29/14/24 nba: 0 nfl: 19/13/24 nba: 4 nfl: 119/12/24 nba: 0 nfl: 0

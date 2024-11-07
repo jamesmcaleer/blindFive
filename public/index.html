@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlindFive - Daily Sports Ranking Game!</title>
+    <script src="client.js"></script>
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    
+
+    <div id="container">
+        <div id="bannerContainer">
+            <button id="bannerStatIcon" onclick="showStats()"></button>
+            <img src="/images/blindFive-logo.png" id="bannerImage">
+            <button id="bannerQuestionIcon" onclick="showIntructions()"></button>
+        </div>
+        <div id="navBar">
+            <a class="navContent" id="textNFL" href="/nfl">NFL</a> 
+            <a class="navContent" id="textNBA" href="/nba">NBA</a>
+            <a class="navContent" id="textMLB" href="/mlb">MLB</a>
+            <a class="navContent" id="textNHL" href="/nhl">NHL</a>        
+        </div>
+
+        
+
+        <div id="statContainer">
+            <label id="statText"></label>
+        </div>
+
+        <div id="actionContainer" class="centerHorizontal">
+            
+            <div id="userStatContainer" class="infoContainer">
+                <header class="infoHeader">STATISTICS</header>
+                <button id="xIcon" onclick="hideInfo()"></button>
+
+                <div id="userDataContainer">
+                    
+                    <div class="boxRow"> 
+                        <div class="boxCell numText" id="games-played"> 
+                            0
+                        </div> 
+                            
+                        <div class="boxCell numText" id="win-percentage"> 
+                            0
+                        </div> 
+
+                        <div class="boxCell numText" id="streak"> 
+                            0
+                        </div> 
+                    </div>
+                    <div class="boxRow"> 
+                        <div class="boxCell" style="font-weight: bold;"> 
+                            Played
+                        </div> 
+                            
+                        <div class="boxCell" style="font-weight: bold;"> 
+                            Win%
+                        </div> 
+
+                        <div class="boxCell" style="font-weight: bold;"> 
+                            Streak
+                        </div>
+                    </div> 
+                </div>
+                <hr>
+                <div id="userDisplayContainer">
+                    <header class="infoBody" style="font-weight: 600; padding-block: 2%;">GUESS DISTRIBUTION</header>
+
+                    <div class="guessBarContainer">
+                        <div class="numGuess">1</div>
+                        <div class="guessBar" id="guessOne">0</div>
+                    </div>
+                    
+                    <div class="guessBarContainer">
+                        <div class="numGuess">2</div>
+                        <div class="guessBar" id="guessTwo">0</div>
+                    </div>
+                    
+                    <div class="guessBarContainer">
+                        <div class="numGuess">3</div>
+                        <div class="guessBar" id="guessThree">0</div>
+                    </div>
+
+                    <button id="shareScoreButton" onclick="copyShareText()">Share Score</button>
+                </div>
+            </div>
+
+            <div id="instructionContainer" class="infoContainer">
+                <header class="infoHeader">HOW TO PLAY</header>
+                <button id="xIcon" onclick="hideInfo()"></button>
+                <p class="infoBody">You are given <b>THREE</b> attempts to rank the <b>FIVE</b> players from highest to lowest with respect to a statistic.</p>
+                <p class="infoBody"><b>CLICK</b> a player at the bottom to select.</p>
+                <p class="infoBody"><b>CLICK</b> an empty box above to rank the player.</p>
+                <p class="infoBody" style="font-weight: bold;">EXAMPLE</p>
+                <p class="infoBody">The stat of the day is <b>POINTS</b>. You would simply rank the players based on this stat.</p>
+                <p class="infoBody"></p>
+                <p class="infoBody">If two are correct, you will see <b>2/5</b>.</p>
+                <p class="infoBody">You will not know <i>which</i> players are correct, only <i>how many</i> are correct.</p>
+                <p class="infoBody">Players' stats are based only on the <b>CURRENT</b> or <b>MOST RECENT</b> season.</p>
+                <p class="infoBody">The <i>stat</i> and <i>players</i> reset daily at <b>12:00AM</b> EST.</p>
+                <p class="infoBody"><b>Good Luck!</b></p>
+            </div> 
+
+            <div id="guessRows">
+
+            </div>
+            <div id="playerChoiceContainer">
+                <div id="submitContainer">
+                    <button id="submitButton" onclick="submitGuess(null )">SUBMIT</button>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+    
+    
+</body>
+</html>
