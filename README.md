@@ -3,8 +3,6 @@
   <img src="blind_five_logo.jpg" alt="Blind Five Logo" width="600"/>
 </p>
 
-# Blind Five
-
 Blind Five is a daily sports challenge game that tests your knowledge of player statistics across the NBA and NFL.  
 Every day at midnight EST, a new stat and a new pool of players are selected. Your goal: **rank 5 players from highest to lowest in that stat**.  
 
