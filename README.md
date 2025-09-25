@@ -288,10 +288,5 @@ Blind Five relies on data scraped from Sports-Reference.com. This project uses t
 - Add more leagues (MLB, NHL, Soccer).  
 - Leaderboards and user streaks.  
 - Mobile-friendly UI improvements.  
-- Smarter difficulty scaling and configurable stat weighting.
+- Easy/Hard mode implementation.
 
----
-
-## License
-
-MIT License. See [LICENSE](LICENSE) for details.
