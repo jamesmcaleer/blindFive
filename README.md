@@ -22,8 +22,7 @@ Data is sourced directly from [Sports-Reference.com](https://www.sports-referenc
 - [Installation](#installation)
 - [Data Source Disclaimer](#data-source-disclaimer)
 - [Future Roadmap](#future-roadmap)
-- [License](#license)
-
+  
 ---
 
 ## How to Play
